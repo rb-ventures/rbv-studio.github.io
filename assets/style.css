@@ -1,0 +1,491 @@
+/* =========================================
+   RBV-STUDIO SITE STYLES
+   ========================================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #0b0b0b;
+  --muted: #6b7280;
+  --accent: #15c3b8;
+  --accent-hover: #10b4aa;
+  --radius: 8px;
+  --transition: 0.25s ease;
+  --max-width: 1100px;
+  --header-height: 70px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Global link styling: accent color; underline on hover */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   LAYOUT & CONTAINERS
+   ========================================= */
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background: #f9fafa;
+}
+
+.section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
+}
+
+.brand-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+/* Ensure Contact button in nav turns white on hover */
+.nav-list a.btn-accent:hover {
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-list {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    transition: max-height 0.3s ease;
+  }
+  .nav-list.open {
+    max-height: 300px;
+  }
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: calc(var(--header-height) + 5rem);
+  padding-bottom: 6rem;
+  background-color: var(--bg);
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.15rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.studio-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.underline-anim {
+  width: 120px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.5rem auto;
+  /* animation disabled per design */
+}
+
+@keyframes growLine {
+  from {
+    width: 40px;
+    opacity: 0.5;
+  }
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: #f2f2f2;
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #e6e6e6;
+}
+
+.btn-link {
+  background: none;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.btn-accent {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+}
+
+.btn-accent:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* =========================================
+   CARDS & COLLECTION GRID
+   ========================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+.thumb.placeholder {
+  background: #e8f7f6;
+  height: 200px;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+/* Real image thumbs */
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.collection-links {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* =========================================
+   PIPELINE LIST & DIAGRAM
+   ========================================= */
+
+.pipeline {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+.pipeline li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pipeline li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* =========================================
+   QUOTE / VISION SECTION
+   ========================================= */
+
+.quote {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--muted);
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.site-footer p {
+  margin: 0.3rem 0;
+}
+
+.site-footer .muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer brand logo */
+.footer-brand {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+.footer-brand img {
+  height: 24px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* =========================================
+   MEDIA QUERIES
+   ========================================= */
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* =========================================
+   FADE-IN ANIMATION
+   ========================================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   ACCENT GLOW ANIMATION (Hero & Buttons)
+   ========================================= */
+
+/* Glow keyframes */
+@keyframes accentGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(21, 195, 184, 0);
+    text-shadow: 0 0 0 rgba(21, 195, 184, 0);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(21, 195, 184, 0.45);
+    text-shadow: 0 0 8px rgba(21, 195, 184, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(21, 195, 184, 0);
+    text-shadow: 0 0 0 rgba(21, 195, 184, 0);
+  }
+}
+
+/* Hero underline: static (no animation) */
+.underline-anim {
+  animation: none;
+}
+
+/* Buttons subtle glow on hover */
+.btn-primary:hover,
+.btn-accent:hover {
+  animation: accentGlow 2.5s ease-in-out infinite;
+}
+
+/* Remove hover effects from brand logo for a cleaner look */
+.brand-logo:hover {
+  filter: none;
+}
