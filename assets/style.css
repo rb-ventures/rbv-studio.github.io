@@ -664,14 +664,14 @@ main {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  opacity: 1;
+  transform: none;
+  transition: opacity 350ms ease, transform 350ms ease;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (max-width: 1080px) {
