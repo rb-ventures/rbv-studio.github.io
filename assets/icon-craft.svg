@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="iconCraftTitle iconCraftDesc">
+  <title id="iconCraftTitle">Creative direction icon</title>
+  <desc id="iconCraftDesc">Geometric pencil nib inside a rounded square.</desc>
+  <rect x="7" y="7" width="50" height="50" rx="16" fill="#E4F8F8" stroke="#A8D9DB" stroke-width="2"/>
+  <path d="M32 16L44 30L32 48L20 30L32 16Z" fill="#14989D" fill-opacity="0.15" stroke="#0F6F73" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 27L36.5 32L32 37L27.5 32L32 27Z" fill="#0F6F73"/>
+  <path d="M24 44H40" stroke="#0F6F73" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
