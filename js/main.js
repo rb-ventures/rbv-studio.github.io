@@ -2,61 +2,103 @@
 // RBV-STUDIO MAIN JS
 // ===============================
 
-// Mobile Navigation
-const btn = document.querySelector('.nav-toggle');
-const menu = document.getElementById('nav-menu');
-if (btn && menu) {
-  btn.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+const siteHeader = document.querySelector('.site-header');
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = navMenu ? navMenu.querySelectorAll('a[href]') : [];
+const isDesktop = window.matchMedia('(min-width: 901px)');
+
+const getHeaderOffset = () => (siteHeader?.offsetHeight || 0) + 14;
+
+const setMenuState = (open) => {
+  if (!navMenu || !navToggle) return;
+  navMenu.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  document.body.classList.toggle('menu-open', open);
+};
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    setMenuState(!isOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (!navMenu.classList.contains('open')) return;
+    const clickedInside = navMenu.contains(target) || navToggle.contains(target);
+    if (!clickedInside) setMenuState(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenuState(false);
+  });
+
+  isDesktop.addEventListener('change', (event) => {
+    if (event.matches) setMenuState(false);
   });
 }
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id.length > 1) {
-      e.preventDefault();
-      document.querySelector(id)?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
-
-// Sticky Header
-const header = document.querySelector('.site-header');
-const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
-onScroll();
-window.addEventListener('scroll', onScroll);
-
-// ===============================
-// Scroll Fade-In Animations
-// ===============================
-
-// Add 'fade-in' class to elements you want to animate in CSS.
-const fadeEls = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-  threshold: 0.15,
-  rootMargin: "0px 0px -10% 0px"
+// Sticky Header Style
+const syncHeaderScrollState = () => {
+  if (!siteHeader) return;
+  siteHeader.classList.toggle('scrolled', window.scrollY > 12);
 };
+syncHeaderScrollState();
+window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    observer.unobserve(entry.target);
+// Anchor Navigation with Fixed Header Compensation
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (event) => {
+    const href = anchor.getAttribute('href');
+    if (!href || href.length <= 1) return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    event.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+    window.scrollTo({ top, behavior: 'smooth' });
   });
-}, appearOptions);
-
-fadeEls.forEach(el => appearOnScroll.observe(el));
-
-// Optional: Automatically add .fade-in to key sections
-document.querySelectorAll('section').forEach(section => {
-  section.classList.add('fade-in');
-  // Ensure newly-tagged sections are observed so they can transition to 'appear'
-  appearOnScroll.observe(section);
 });
+
+// If page loads with hash, correct scroll after layout settles
+if (window.location.hash && window.location.hash.length > 1) {
+  window.addEventListener('load', () => {
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
+    window.scrollTo({ top });
+  });
+}
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (reducedMotion) {
+  revealElements.forEach((el) => el.classList.add('is-visible'));
+} else if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.16,
+      rootMargin: '0px 0px -8% 0px'
+    }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+} else {
+  revealElements.forEach((el) => el.classList.add('is-visible'));
+}

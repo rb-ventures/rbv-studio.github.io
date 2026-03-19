@@ -3,151 +3,241 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RBV-Studio — AI-Crafted Creativity, Autonomously</title>
-  <meta name="description" content="RBV-Studio is a digital-creative brand of RB-Ventures LLC. We build AI-generated art, templates, and digital goods that sell autonomously online." />
+  <title>RBV-Studio — AI-Crafted Creativity, Elevated</title>
+  <meta name="description" content="RBV-Studio is the digital-creative brand of RB-Ventures LLC. We build premium AI-crafted art collections and digital goods designed to sell online, autonomously." />
+  <meta name="theme-color" content="#0b111e" />
+  <meta property="og:title" content="RBV-Studio — AI-Crafted Creativity, Elevated" />
+  <meta property="og:description" content="Premium AI-generated art collections, templates, and digital products by RB-Ventures LLC." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/collections/zrh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/favicon-32.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
-  <header class="site-header" role="banner">
+  <div class="page-glow page-glow--top" aria-hidden="true"></div>
+  <div class="page-glow page-glow--mid" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="RBV-Studio Home">
-        <img src="assets/weblogo.png" alt="RBV-Studio Logo" class="brand-logo" />
+        <span class="brand-shell">
+          <img src="assets/weblogo.png" alt="RBV-Studio logo" class="brand-logo" />
+        </span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
         <ul id="nav-menu" class="nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="#collections">Collections</a></li>
-          <li><a class="btn btn-accent" href="#contact">Contact</a></li>
+          <li><a href="#legal">Legal</a></li>
+          <li><a class="btn btn-outline" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="section hero" aria-label="Hero">
-      <div class="container hero-inner">
-        <h1 class="hero-title">AI-Crafted Creativity. Autonomously.</h1>
-        <p class="hero-subtitle">
-          We build and sell AI-generated art, templates, and digital products that live — and sell — online.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#collections">Explore the Collection</a>
+  <main>
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Digital-Creative Brand by <a href="https://rb-ventures.com" target="_blank" rel="noopener">RB-Ventures LLC</a></p>
+          <h1 id="hero-title">AI-Crafted Creativity.<br />Built to Feel Premium.</h1>
+          <p class="hero-subtitle">
+            We design and launch high-conversion art collections, printable décor, and digital products that live online and sell autonomously.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#collections">Explore the Collection</a>
+            <a class="btn btn-ghost" href="#about">See Our Creative Stack</a>
+          </div>
+          <ul class="hero-meta" aria-label="Highlights">
+            <li>AI Art Direction</li>
+            <li>Marketplace-Ready Assets</li>
+            <li>Instant Download Delivery</li>
+          </ul>
         </div>
-        <div class="underline-anim" aria-hidden="true"></div>
-        <p class="studio-note">A digital-creative brand by <a href="https://rb-ventures.com" target="_blank" rel="noopener">RB-Ventures LLC</a>.</p>
+
+        <div class="hero-visual reveal">
+          <img src="assets/hero-aurora.svg" class="hero-illustration" alt="" aria-hidden="true" />
+          <article class="spotlight-card">
+            <p class="spotlight-label">Featured Drop</p>
+            <figure class="spotlight-image">
+              <picture>
+                <source type="image/webp" srcset="assets/collections/optimized/zrh.webp" />
+                <img src="assets/collections/zrh.png" alt="Snowy Zurich Street premium printable wall art" width="1200" height="800" />
+              </picture>
+            </figure>
+            <div class="spotlight-copy">
+              <h2>Winter Holidays in Switzerland &amp; Beyond</h2>
+              <p>Serene winter visuals crafted for elevated interior spaces.</p>
+            </div>
+          </article>
+
+          <div class="metric-grid" aria-label="Studio metrics">
+            <div class="metric-card">
+              <p class="metric-value">4K+</p>
+              <p class="metric-label">Render Variants Explored</p>
+            </div>
+            <div class="metric-card">
+              <p class="metric-value">A4 / A3</p>
+              <p class="metric-label">Print Sizes Included</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section section-pad">
+    <section id="about" class="section section-surface" aria-labelledby="about-title">
       <div class="container">
-        <div>
-          <h2>Who We Are</h2>
-          <p>
-            RBV-Studio is a digital-creative brand of <strong>RB-Ventures LLC</strong>.
+        <div class="section-head reveal">
+          <p class="eyebrow">Who We Are</p>
+          <h2 id="about-title">A studio model built for quality, speed, and consistency.</h2>
+          <p class="lead">
+            RBV-Studio is the digital-creative arm of <strong>RB-Ventures LLC</strong>. We combine AI ideation with curatorial design standards so each release is commercially ready, visually cohesive, and premium by default.
           </p>
-          <p>
-            We create AI-generated art collections, printable décor, and design templates distributed through marketplaces like <em>Etsy</em> and <em>Gumroad</em>. 
-          </p>
+        </div>
+
+        <div class="pillar-grid">
+          <article class="pillar-card reveal">
+            <img src="assets/icon-craft.svg" alt="" aria-hidden="true" />
+            <h3>Creative Direction</h3>
+            <p>Curated prompts, composition control, and style consistency turn raw generation into collectible-grade art.</p>
+          </article>
+          <article class="pillar-card reveal">
+            <img src="assets/icon-distribution.svg" alt="" aria-hidden="true" />
+            <h3>Commerce Distribution</h3>
+            <p>We prepare listings and ready-to-deliver formats for platforms like Etsy, with Gumroad expansion in progress.</p>
+          </article>
+          <article class="pillar-card reveal">
+            <img src="assets/icon-autonomy.svg" alt="" aria-hidden="true" />
+            <h3>Autonomous Engine</h3>
+            <p>Our workflow is designed for repeatable release cycles that scale without sacrificing visual quality.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- COLLECTIONS -->
-    <section id="collections" class="section section-alt">
+    <section id="collections" class="section" aria-labelledby="collections-title">
       <div class="container">
-        <h2>Featured Collection: Winter Holidays in Switzerland &amp; Beyond</h2>
-        <p class="lead">
-          A serene series of AI-crafted winter visuals — snow-covered towns, cozy chalets, festive streets, and mountain calm. Ready as instant-download A4/A3 prints.
-        </p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Featured Collection</p>
+          <h2 id="collections-title">Winter Holidays in Switzerland &amp; Beyond</h2>
+          <p class="lead">
+            Snow-covered towns, cozy chalets, festive streets, and alpine calm — delivered as instant-download printable wall art.
+          </p>
+        </div>
 
-        <div class="card-grid">
-          <article class="card">
-            <div class="thumb">
+        <div class="collection-grid">
+          <article class="collection-card reveal">
+            <figure>
               <picture>
                 <source type="image/webp" srcset="assets/collections/optimized/zrh.webp" />
                 <img src="assets/collections/zrh.png" alt="Snowy Zurich Street printable wall art" loading="lazy" width="1200" height="800" />
               </picture>
+            </figure>
+            <div class="collection-copy">
+              <h3>Snowy Zurich Street</h3>
+              <p>Printable Wall Art · Winter Edition</p>
             </div>
-            <h3>Snowy Zurich Street</h3>
-            <p class="muted">Printable Wall Art</p>
           </article>
-          <article class="card">
-            <div class="thumb">
+
+          <article class="collection-card reveal">
+            <figure>
               <picture>
                 <source type="image/webp" srcset="assets/collections/optimized/lu.webp" />
                 <img src="assets/collections/lu.png" alt="Lucerne at Dusk printable wall art" loading="lazy" width="1200" height="800" />
               </picture>
+            </figure>
+            <div class="collection-copy">
+              <h3>Lucerne at Dusk</h3>
+              <p>Printable Wall Art · Evening Series</p>
             </div>
-            <h3>Lucerne at Dusk</h3>
-            <p class="muted">Printable Wall Art</p>
           </article>
-          <article class="card">
-            <div class="thumb">
+
+          <article class="collection-card reveal">
+            <figure>
               <picture>
                 <source type="image/webp" srcset="assets/collections/optimized/cabin.webp" />
                 <img src="assets/collections/cabin.png" alt="Cozy Mountain Cabin printable wall art" loading="lazy" width="1200" height="800" />
               </picture>
+            </figure>
+            <div class="collection-copy">
+              <h3>Cozy Mountain Cabin</h3>
+              <p>Printable Wall Art · Chalet Series</p>
             </div>
-            <h3>Cozy Mountain Cabin</h3>
-            <p class="muted">Printable Wall Art</p>
           </article>
-          <article class="card">
-            <div class="thumb">
+
+          <article class="collection-card reveal">
+            <figure>
               <picture>
                 <source type="image/webp" srcset="assets/collections/optimized/alps.webp" />
                 <img src="assets/collections/alps.png" alt="Alpine Winter Lights printable wall art" loading="lazy" width="1200" height="800" />
               </picture>
+            </figure>
+            <div class="collection-copy">
+              <h3>Alpine Winter Lights</h3>
+              <p>Printable Wall Art · Panorama Series</p>
             </div>
-            <h3>Alpine Winter Lights</h3>
-            <p class="muted">Printable Wall Art</p>
           </article>
         </div>
 
-        <div class="collection-links">
+        <div class="collection-links reveal">
           <a class="btn btn-primary" href="https://www.etsy.com/shop/RBVStudioShop" target="_blank" rel="noopener">Visit Etsy Store</a>
-          <a class="btn btn-secondary" href="#collections" rel="noopener">Visit Gumroad Store (Coming Soon)</a>
+          <a class="btn btn-secondary" href="#collections">Visit Gumroad Store (Coming Soon)</a>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section section-pad">
+    <section id="contact" class="section section-cta" aria-labelledby="contact-title">
+      <div class="container reveal">
+        <div class="contact-card">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let’s build standout digital products together.</h2>
+          <p>Questions, partnerships, or media inquiries? We’d love to hear from you.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:info@rbv-studio.com">info@rbv-studio.com</a>
+            <a class="btn btn-ghost on-dark" href="https://rb-ventures.com" target="_blank" rel="noopener">Visit RB-Ventures LLC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legal" class="section section-surface legal" aria-labelledby="legal-title">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="lead">
-          Questions, partnerships, or media inquiries? We’d love to hear from you.
-        </p>
-        <p>
-          <a class="link-strong" href="mailto:info@rbv-studio.com">info@rbv-studio.com</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- LEGAL -->
-    <section id="legal" class="section section-pad">
-      <div class="container grid-2">
-        <div>
-          <h3>Privacy</h3>
-          <p class="muted">
-            RBV-Studio respects your privacy and processes personal data in accordance with applicable laws (including GDPR and Swiss FADP). We only collect information you voluntarily provide (e.g., when you contact us by email) and do not sell personal data. When using third-party services, we evaluate their privacy practices and limit shared data. If you wish to exercise your privacy rights (access, correction, deletion, restriction, or portability), contact us at
-            <a href="mailto:privacy@rbv-studio.com">privacy@rbv-studio.com</a>.
-          </p>
+        <div class="section-head reveal">
+          <p class="eyebrow">Legal</p>
+          <h2 id="legal-title">Privacy &amp; Terms</h2>
         </div>
-        <div>
-          <h3>Terms</h3>
-          <p class="muted">
-            By using this website you accept these terms. Content is provided “as is” without warranties as to accuracy or completeness. RB-Ventures LLC is not liable for any damages arising from use of this site or linked resources. These terms are governed by the laws of the State of Delaware, USA. For enquiries, email
-            <a href="mailto:info@rbv-studio.com">info@rbv-studio.com</a>.
-          </p>
+        <div class="legal-grid">
+          <article class="legal-card reveal">
+            <h3>Privacy</h3>
+            <p>
+              RBV-Studio respects your privacy and processes personal data in accordance with applicable laws (including GDPR and Swiss FADP). We only collect information you voluntarily provide (for example when you contact us by email) and never sell personal data.
+            </p>
+            <p>
+              When using third-party services, we evaluate privacy practices and limit shared data. To exercise your privacy rights (access, correction, deletion, restriction, or portability), contact
+              <a href="mailto:privacy@rbv-studio.com">privacy@rbv-studio.com</a>.
+            </p>
+          </article>
+          <article class="legal-card reveal">
+            <h3>Terms</h3>
+            <p>
+              By using this website, you accept these terms. Content is provided “as is” without warranties as to accuracy or completeness. RB-Ventures LLC is not liable for damages arising from use of this site or linked resources.
+            </p>
+            <p>
+              These terms are governed by the laws of the State of Delaware, USA. For enquiries, email
+              <a href="mailto:info@rbv-studio.com">info@rbv-studio.com</a>.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -155,18 +245,20 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/weblogo.png" alt="RBV-Studio logo" />
+      </div>
       <p>© 2025 RB-Ventures LLC</p>
-      <p class="muted">RBV-Studio is a brand of RB-Ventures LLC.</p>
+      <p class="footer-muted">RBV-Studio is a brand of RB-Ventures LLC.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-
   <noscript>
     <style>
-      .nav-toggle { display:none; }
-      .nav-list { display:flex !important; }
-      html { scroll-behavior: smooth; }
+      .nav-toggle { display: none; }
+      .nav-list { display: flex !important; position: static !important; max-height: none !important; opacity: 1 !important; visibility: visible !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
 </body>
