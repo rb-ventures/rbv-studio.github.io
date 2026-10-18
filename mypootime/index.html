@@ -15,6 +15,7 @@
   <link rel="icon" href="/mypootime/img/icon-192.webp" type="image/webp">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="/assets/viewer.css">
   <style>
     /* MyPooTime's own night purple and toilet-paper orange, kept to this page */
     :root { --mpt-night: #160b36; --mpt-deep: #0b0520; --mpt-orange: #ff9d2e; --mpt-orange-deep: #b45a00; }
@@ -58,7 +59,10 @@
     @media (max-width: 860px) {
       .app-hero .wrap { grid-template-columns: 1fr; gap: 24px; }
       .app-icon { width: 140px; height: 140px; border-radius: 32px; }
-      .phones { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      /* phones: a row to swipe through, the next screen peeking in */
+      .phones { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -16px; padding: 0 16px 8px; scrollbar-width: none; }
+      .phones::-webkit-scrollbar { display: none; }
+      .phones li { flex: 0 0 58%; scroll-snap-align: center; }
       .features { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
@@ -71,6 +75,7 @@
     <div class="wrap">
       <a class="brand" href="/"><img src="/assets/brand/wordmark.svg" alt="RBV-Studio" width="633" height="122"></a>
       <nav aria-label="Main">
+        <a href="/">Home</a>
         <a href="/games/" aria-current="page">Games</a>
         <a href="/parents/">Parents</a>
         <a href="/support/">Support</a>
@@ -101,8 +106,8 @@
     <section class="screens">
       <div class="wrap">
         <h2>A look inside</h2>
-        <p class="intro">Screens from the test build. Select one to see it larger.</p>
-        <ul class="phones">
+        <p class="intro">Screens from the test build. Select one to see it large, then use the arrows or swipe.</p>
+        <ul class="phones" data-gallery data-portrait>
           <li><a href="/mypootime/img/welcome-960.webp"><img src="/mypootime/img/welcome-640.webp" alt="The welcome screen: track bathroom breaks, play games, compete with friends, and an age choice of under 13 or 13 and up" loading="lazy" width="640" height="1391"><span>Welcome aboard</span></a></li>
           <li><a href="/mypootime/img/home-960.webp"><img src="/mypootime/img/home-640.webp" alt="The home screen during a session: the big button, a live count of people on the throne, your streak and today's mood" loading="lazy" width="640" height="1391"><span>The big button</span></a></li>
           <li><a href="/mypootime/img/poo-map-960.webp"><img src="/mypootime/img/poo-map-640.webp" alt="The Poo Map: poo pins around towns near Zurich, with Privacy Flush Mode's note that pins are deliberately fuzzy" loading="lazy" width="640" height="1391"><span>The Poo Map</span></a></li>
@@ -166,6 +171,7 @@
     <div class="wrap">
       <span>© 2026 RB-Ventures LLC. RBV-Studio is the games brand of RB-Ventures LLC. Please wash your hands.</span>
       <nav aria-label="Footer">
+        <a href="/">Home</a>
         <a href="/games/" aria-current="page">Games</a>
         <a href="/parents/">Parents</a>
         <a href="/support/">Support</a>
@@ -176,5 +182,6 @@
       <span class="fine">Not made or endorsed by Apple, Google or Roblox Corporation. App Store is a service mark of Apple Inc.; Google Play is a trademark of Google LLC; Roblox is a trademark of Roblox Corporation. This site sets no cookies and loads nothing from other sites.</span>
     </div>
   </footer>
+  <script src="/assets/viewer.js" defer></script>
 </body>
 </html>

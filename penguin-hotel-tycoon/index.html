@@ -11,6 +11,7 @@
   <meta property="og:image" content="https://rbv-studio.com/penguin-hotel-tycoon/img/hotel-dusk.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="/penguin-hotel-tycoon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/viewer.css">
   <link rel="canonical" href="https://rbv-studio.com/penguin-hotel-tycoon/">
   <meta property="og:url" content="https://rbv-studio.com/penguin-hotel-tycoon/">
   <style>
@@ -113,18 +114,17 @@
     /* gallery */
     .gallery { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 250px; gap: 14px; }
     .gallery figure { margin: 0; position: relative; border-radius: 18px; overflow: hidden; background: var(--navy900); cursor: zoom-in; }
+    .gallery figure a { display: block; height: 100%; }
     .gallery figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
     .gallery figure:hover img { transform: scale(1.04); }
-    .gallery figcaption {
+    .gallery figcaption { pointer-events: none;
       position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; border-radius: 999px;
       background: rgb(20 48 74 / .82); color: var(--snow); font-weight: 800; font-size: 14px;
     }
     .gallery .wide { grid-column: span 4; }
     .gallery .tall { grid-column: span 2; }
     .gallery .half { grid-column: span 3; }
-    dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1400px, 96vw); }
-    dialog.lightbox::backdrop { background: rgb(13 34 56 / .85); }
-    dialog.lightbox img { border-radius: 16px; max-height: 88vh; width: auto; }
+    .gallery-hint { display: none; margin: 10px 0 0; color: var(--ink-muted); font-size: 15px; }
 
     /* steps */
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: step; }
@@ -177,8 +177,11 @@
       .hero p.lede { margin-inline: auto; }
       .features, .steps { grid-template-columns: 1fr 1fr; }
       .promise { grid-template-columns: 1fr; padding: 28px; }
-      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 190px; }
-      .gallery .wide, .gallery .tall, .gallery .half { grid-column: span 2; }
+      /* phones and small tablets: swipe through the pictures, one at a time with the next one peeking in */
+      .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin-inline: -16px; padding: 0 16px 6px; scrollbar-width: none; }
+      .gallery::-webkit-scrollbar { display: none; }
+      .gallery figure { flex: 0 0 84%; aspect-ratio: 16 / 9; scroll-snap-align: center; }
+      .gallery-hint { display: block; }
       nav.links { display: none; }
       header.top .play.small { margin-left: auto; }
     }
@@ -310,20 +313,21 @@
     <section id="screens" style="padding-top:0">
       <div class="wrap">
         <h2>In the game</h2>
-        <p class="sub">Screens from the current version.</p>
-        <div class="gallery">
-          <figure class="wide"><img src="/penguin-hotel-tycoon/img/hotel-dusk.jpg" alt="A chalet-style penguin hotel with two wings at dusk, lamps along the path" loading="lazy" width="1600" height="858"><figcaption>Your hotel at dusk</figcaption></figure>
-          <figure class="tall"><img src="/penguin-hotel-tycoon/img/lobby.jpg" alt="Inside the lobby: the reception desk, sofas, a rug and penguin guests" loading="lazy" width="1600" height="858"><figcaption>Walk into the lobby</figcaption></figure>
-          <figure class="half"><img src="/penguin-hotel-tycoon/img/room.jpg" alt="A cozy guest room with a cabin bed, shuttered window, knit armchair, rug and flower pouf" loading="lazy" width="1600" height="858"><figcaption>Rooms guests wish for</figcaption></figure>
-          <figure class="half"><img src="/penguin-hotel-tycoon/img/ui-decor.jpg" alt="Decorating a room in place: the room seen from above beside a tray of picture cards, three hearts for its style" loading="lazy" width="1600" height="858"><figcaption>Decorate right in the room</figcaption></figure>
-          <figure class="tall"><img src="/penguin-hotel-tycoon/img/toboggan-hill.jpg" alt="A chairlift climbing a snowy toboggan hill" loading="lazy" width="1600" height="858"><figcaption>The toboggan hill</figcaption></figure>
-          <figure class="wide"><img src="/penguin-hotel-tycoon/img/hotel-night.jpg" alt="The hotel at night under the northern lights" loading="lazy" width="1600" height="858"><figcaption>Night falls on the island</figcaption></figure>
-          <figure class="half"><img src="/penguin-hotel-tycoon/img/snow-fort.jpg" alt="A snowball fight in the snow fort: a player and penguin teams behind snow walls, a splat on the far side and the team board" loading="lazy" width="1600" height="858"><figcaption>Snowball fights in the fort</figcaption></figure>
-          <figure class="half"><img src="/penguin-hotel-tycoon/img/football.jpg" alt="Penguins cheer as a giant striped ball rolls into the goal under confetti" loading="lazy" width="1600" height="858"><figcaption>Big-ball football</figcaption></figure>
-          <figure class="tall"><img src="/penguin-hotel-tycoon/img/parachute.jpg" alt="A player waves under a striped parachute above the snowy hotel roofs" loading="lazy" width="1600" height="858"><figcaption>Parachute from the roof</figcaption></figure>
-          <figure class="tall"><img src="/penguin-hotel-tycoon/img/jump-park.jpg" alt="A snowmobile flies off a snow ramp at the jump park" loading="lazy" width="1600" height="858"><figcaption>Snowmobiles and jumps</figcaption></figure>
-          <figure class="tall"><img src="/penguin-hotel-tycoon/img/lagoon.jpg" alt="A player ice fishing at a hole in the frozen lagoon, the sea behind" loading="lazy" width="1600" height="858"><figcaption>Ice fishing at the lagoon</figcaption></figure>
+        <p class="sub">Screens from the current version. Select one to see it large.</p>
+        <div class="gallery" data-gallery>
+          <figure class="wide"><a href="/penguin-hotel-tycoon/img/hotel-dusk.jpg"><img src="/penguin-hotel-tycoon/img/hotel-dusk.jpg" alt="A chalet-style penguin hotel with two wings at dusk, lamps along the path" loading="lazy" width="1600" height="858"></a><figcaption>Your hotel at dusk</figcaption></figure>
+          <figure class="tall"><a href="/penguin-hotel-tycoon/img/lobby.jpg"><img src="/penguin-hotel-tycoon/img/lobby.jpg" alt="Inside the lobby: the reception desk, sofas, a rug and penguin guests" loading="lazy" width="1600" height="858"></a><figcaption>Walk into the lobby</figcaption></figure>
+          <figure class="half"><a href="/penguin-hotel-tycoon/img/room.jpg"><img src="/penguin-hotel-tycoon/img/room.jpg" alt="A cozy guest room with a cabin bed, shuttered window, knit armchair, rug and flower pouf" loading="lazy" width="1600" height="858"></a><figcaption>Rooms guests wish for</figcaption></figure>
+          <figure class="half"><a href="/penguin-hotel-tycoon/img/ui-decor.jpg"><img src="/penguin-hotel-tycoon/img/ui-decor.jpg" alt="Decorating a room in place: the room seen from above beside a tray of picture cards, three hearts for its style" loading="lazy" width="1600" height="858"></a><figcaption>Decorate right in the room</figcaption></figure>
+          <figure class="tall"><a href="/penguin-hotel-tycoon/img/toboggan-hill.jpg"><img src="/penguin-hotel-tycoon/img/toboggan-hill.jpg" alt="A chairlift climbing a snowy toboggan hill" loading="lazy" width="1600" height="858"></a><figcaption>The toboggan hill</figcaption></figure>
+          <figure class="wide"><a href="/penguin-hotel-tycoon/img/hotel-night.jpg"><img src="/penguin-hotel-tycoon/img/hotel-night.jpg" alt="The hotel at night under the northern lights" loading="lazy" width="1600" height="858"></a><figcaption>Night falls on the island</figcaption></figure>
+          <figure class="half"><a href="/penguin-hotel-tycoon/img/snow-fort.jpg"><img src="/penguin-hotel-tycoon/img/snow-fort.jpg" alt="A snowball fight in the snow fort: a player and penguin teams behind snow walls, a splat on the far side and the team board" loading="lazy" width="1600" height="858"></a><figcaption>Snowball fights in the fort</figcaption></figure>
+          <figure class="half"><a href="/penguin-hotel-tycoon/img/football.jpg"><img src="/penguin-hotel-tycoon/img/football.jpg" alt="Penguins cheer as a giant striped ball rolls into the goal under confetti" loading="lazy" width="1600" height="858"></a><figcaption>Big-ball football</figcaption></figure>
+          <figure class="tall"><a href="/penguin-hotel-tycoon/img/parachute.jpg"><img src="/penguin-hotel-tycoon/img/parachute.jpg" alt="A player waves under a striped parachute above the snowy hotel roofs" loading="lazy" width="1600" height="858"></a><figcaption>Parachute from the roof</figcaption></figure>
+          <figure class="tall"><a href="/penguin-hotel-tycoon/img/jump-park.jpg"><img src="/penguin-hotel-tycoon/img/jump-park.jpg" alt="A snowmobile flies off a snow ramp at the jump park" loading="lazy" width="1600" height="858"></a><figcaption>Snowmobiles and jumps</figcaption></figure>
+          <figure class="tall"><a href="/penguin-hotel-tycoon/img/lagoon.jpg"><img src="/penguin-hotel-tycoon/img/lagoon.jpg" alt="A player ice fishing at a hole in the frozen lagoon, the sea behind" loading="lazy" width="1600" height="858"></a><figcaption>Ice fishing at the lagoon</figcaption></figure>
         </div>
+        <p class="gallery-hint">Swipe through the pictures, and tap one to see it large.</p>
       </div>
     </section>
 
@@ -386,12 +390,11 @@
   <footer>
     <div class="wrap">
       <span>Made by <a href="/">RBV-Studio</a>, the games brand of RB-Ventures LLC. © 2026</span>
-      <span class="links"><a href="/games/">All games</a> <a href="/parents/">Parents</a> <a href="/support/">Support</a> <a href="/press/">Press</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></span>
+      <span class="links"><a href="/">RBV-Studio</a> <a href="/games/">All games</a> <a href="/parents/">Parents</a> <a href="/support/">Support</a> <a href="/press/">Press</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a></span>
       <span>Not made or endorsed by Roblox Corporation. Roblox is a trademark of Roblox Corporation. This page sets no cookies and loads no trackers.</span>
     </div>
   </footer>
 
-  <dialog class="lightbox" aria-label="Screenshot"><img alt=""></dialog>
 
   <script>
     // falling snow in the hero (skipped when reduced motion is asked for)
@@ -408,17 +411,7 @@
         snow.appendChild(flake)
       }
     }
-    // screenshots open large
-    const box = document.querySelector('dialog.lightbox')
-    for (const figure of document.querySelectorAll('.gallery figure')) {
-      figure.addEventListener('click', () => {
-        const img = figure.querySelector('img')
-        box.querySelector('img').src = img.src
-        box.querySelector('img').alt = img.alt
-        box.showModal()
-      })
-    }
-    box.addEventListener('click', () => box.close())
   </script>
+  <script src="/assets/viewer.js" defer></script>
 </body>
 </html>
