@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyPooTime — bathroom breaks, gamified</title>
+  <meta name="description" content="MyPooTime turns bathroom breaks into a game: quick mini-games, silly avatars and streaks with friends. Coming early 2027 to iPhone and Android, for ages 13 and up.">
+  <meta name="theme-color" content="#f4f9fa">
+  <link rel="canonical" href="https://rbv-studio.com/mypootime/">
+  <meta property="og:title" content="MyPooTime">
+  <meta property="og:description" content="Bathroom breaks, gamified. Coming early 2027 to iPhone and Android, for ages 13 and up.">
+  <meta property="og:image" content="https://rbv-studio.com/mypootime/img/icon-512.webp">
+  <meta property="og:url" content="https://rbv-studio.com/mypootime/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/mypootime/img/icon-192.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* MyPooTime's own night purple and toilet-paper orange, kept to this page */
+    :root { --mpt-night: #160b36; --mpt-deep: #0b0520; --mpt-orange: #ff9d2e; --mpt-orange-deep: #b45a00; }
+    .app-hero { padding: 32px 0 64px; }
+    .app-hero .wrap { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: center; }
+    .app-icon { width: 220px; height: 220px; border-radius: 48px; box-shadow: 0 20px 40px -16px rgb(22 11 54 / .55); }
+    .app-hero h1 { margin-bottom: 14px; }
+    .app-hero .lede { max-width: 44ch; }
+    .facts-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .facts-row li { padding: 7px 14px; border-radius: 999px; background: var(--frost); box-shadow: inset 0 0 0 2px var(--rule); font-family: var(--round); font-weight: 750; font-size: 15px; }
+    .facts-row li.soon { background: var(--mpt-night); color: #fff; box-shadow: none; }
+    .button.mpt { background: var(--mpt-orange); box-shadow: 0 5px 0 var(--mpt-orange-deep); }
+    .button.mpt:hover { box-shadow: 0 7px 0 var(--mpt-orange-deep); }
+    .button.mpt:active { box-shadow: 0 2px 0 var(--mpt-orange-deep); }
+
+    .screens { background: linear-gradient(180deg, var(--mpt-night), var(--mpt-deep)); color: #fff; padding: 64px 0 72px; }
+    .screens h2 { color: #fff; }
+    .screens .intro { color: #c9bff0; }
+    .phones { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .phones li { margin: 0; }
+    .phones a { display: block; text-decoration: none; color: #fff; }
+    .phones img { width: 100%; aspect-ratio: 440 / 956; object-fit: cover; border-radius: 22px; background: #23154f; box-shadow: 0 0 0 2px rgb(255 255 255 / .08), 0 18px 36px -18px #000; }
+    .phones a:hover img { box-shadow: 0 0 0 3px var(--mpt-orange), 0 18px 36px -18px #000; }
+    .phones span { display: block; padding: 10px 2px 0; font-family: var(--round); font-weight: 750; font-size: 15px; }
+    .screens .small { color: #a99fd6; font-size: 14px; margin: 28px 0 0; }
+
+    .features { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
+    .features li { padding: 20px 0; border-top: 2px solid var(--rule); }
+    .features h3 { margin: 0 0 6px; }
+    .features p { margin: 0; color: var(--ink-soft); }
+
+    .age { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; background: var(--frost); border-radius: 6px; padding: 26px 28px; box-shadow: 0 1px 0 var(--rule); max-width: 760px; }
+    .age .badge { font-family: var(--round); font-weight: 800; font-size: 28px; line-height: 1; padding: 14px 16px; border-radius: 14px; background: var(--mpt-night); color: #fff; }
+    .age h2 { font-size: 24px; margin: 0 0 8px; }
+    .age p { margin: 0; color: var(--ink-soft); }
+
+    .qa { max-width: 68ch; }
+    .qa h3 { margin: 26px 0 6px; }
+    .qa p { margin: 0; color: var(--ink-soft); }
+
+    @media (max-width: 860px) {
+      .app-hero .wrap { grid-template-columns: 1fr; gap: 24px; }
+      .app-icon { width: 140px; height: 140px; border-radius: 32px; }
+      .phones { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .features { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .age { grid-template-columns: 1fr; padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/assets/brand/wordmark.svg" alt="RBV-Studio" width="633" height="122"></a>
+      <nav aria-label="Main">
+        <a href="/penguin-hotel-tycoon/">Penguin Hotel Tycoon</a>
+        <a href="/mypootime/" aria-current="page">MyPooTime</a>
+        <a href="/parents/">Parents</a>
+        <a href="/support/">Support</a>
+        <a href="/press/">Press</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="app-hero">
+      <div class="wrap">
+        <img class="app-icon" src="/mypootime/img/icon-512.webp" alt="The MyPooTime app icon: a smiling poo mascot among map pins" width="512" height="512">
+        <div>
+          <h1>MyPooTime</h1>
+          <p class="lede">A silly little app that turns bathroom breaks into a game. Tap the big button, play a quick mini-game, dress up your poo, and keep a streak going with friends.</p>
+          <ul class="facts-row" aria-label="At a glance">
+            <li class="soon">Coming early 2027</li>
+            <li>iPhone and Android</li>
+            <li>Ages 13 and up</li>
+          </ul>
+          <div class="actions">
+            <a class="button mpt" href="https://www.instagram.com/mypootime/" rel="noopener">Follow @mypootime for launch news</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screens">
+      <div class="wrap">
+        <h2>A look inside</h2>
+        <p class="intro">Screens from the test build. Select one to see it larger.</p>
+        <ul class="phones">
+          <li><a href="/mypootime/img/welcome-960.webp"><img src="/mypootime/img/welcome-640.webp" alt="The welcome screen: track bathroom breaks, play games, compete with friends, and an age choice of under 13 or 13 and up" loading="lazy" width="640" height="1391"><span>Welcome aboard</span></a></li>
+          <li><a href="/mypootime/img/game-arena-960.webp"><img src="/mypootime/img/game-arena-640.webp" alt="The Game Arena: Sky Drop, Slither Seat and Throne Match" loading="lazy" width="640" height="1391"><span>The game arena</span></a></li>
+          <li><a href="/mypootime/img/more-games-960.webp"><img src="/mypootime/img/more-games-640.webp" alt="More games: Poo Docku, Royal Pong and Dodge Drop" loading="lazy" width="640" height="1391"><span>More games</span></a></li>
+          <li><a href="/mypootime/img/poo-docku-960.webp"><img src="/mypootime/img/poo-docku-640.webp" alt="Poo Docku, a sudoku with a timer and hints" loading="lazy" width="640" height="1391"><span>Poo Docku</span></a></li>
+          <li><a href="/mypootime/img/poo-match-960.webp"><img src="/mypootime/img/poo-match-640.webp" alt="Poo Match, a memory game of poo avatars" loading="lazy" width="640" height="1391"><span>Poo Match</span></a></li>
+          <li><a href="/mypootime/img/avatars-960.webp"><img src="/mypootime/img/avatars-640.webp" alt="The avatar collection: a grid of poo mascots in hats and costumes" loading="lazy" width="640" height="1391"><span>Avatar collection</span></a></li>
+          <li><a href="/mypootime/img/group-chat-960.webp"><img src="/mypootime/img/group-chat-640.webp" alt="A group chat between friends with poo stickers" loading="lazy" width="640" height="1391"><span>Chat with stickers</span></a></li>
+          <li><a href="/mypootime/img/poofile-960.webp"><img src="/mypootime/img/poofile-640.webp" alt="The Poofile: total sessions, streak, points and throne titles earned" loading="lazy" width="640" height="1391"><span>Your Poofile</span></a></li>
+        </ul>
+        <p class="small">The names in these screens belong to test accounts. Things may change before launch.</p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>What's in it</h2>
+        <p class="intro">We're not saying it will change your life. Your bathroom routine, though, will never be the same.</p>
+        <ul class="features">
+          <li><h3>Quick mini-games</h3><p>More than a dozen, from Poo Docku to Royal Pong. Scrolling is for amateurs.</p></li>
+          <li><h3>Avatars to collect</h3><p>Dress your poo mascot in fifty-plus looks, from caps to costumes, bought with points you earn.</p></li>
+          <li><h3>Throne titles</h3><p>Badges for keeping a streak, playing games and generally committing to the bit.</p></li>
+          <li><h3>Friends and stickers</h3><p>Add friends, send stickers mid-session, start a group chat.</p></li>
+          <li><h3>Your Poofile</h3><p>Your stats and titles on a card you can share. Flex responsibly.</p></li>
+          <li><h3>Poo jokes</h3><p>A joke machine, written with AI, for the longer visits. Blame the algorithm.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band ice">
+      <div class="wrap">
+        <div class="age">
+          <span class="badge" aria-hidden="true">13+</span>
+          <div>
+            <h2>Made for teenagers and grown-ups</h2>
+            <p>MyPooTime is for ages 13 and up. It has chat with friends, and it is supported by ads with an optional premium plan. For younger players we make games like <a href="/penguin-hotel-tycoon/">Penguin Hotel Tycoon</a>. More in our <a href="/parents/">guide for parents</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap qa">
+        <h2>Questions</h2>
+        <h3>When can I get it?</h3>
+        <p>Early 2027, on the App Store and Google Play. Follow <a href="https://www.instagram.com/mypootime/" rel="noopener">@mypootime on Instagram</a> to hear first.</p>
+        <h3>Is it free?</h3>
+        <p>Free to download and supported by ads. An optional premium plan will unlock unlimited sessions, extra avatars and custom sounds. Points are earned in the app, never sold.</p>
+        <h3>Wait, is this real?</h3>
+        <p>Very. It's made by RBV-Studio, the small studio behind Penguin Hotel Tycoon, by people who thought a bathroom break deserved a scoreboard.</p>
+        <h3>What about my privacy?</h3>
+        <p>MyPooTime will publish its own privacy policy before it launches, saying exactly what the app keeps. Questions before then: <a href="mailto:support@rbv-studio.com">support@rbv-studio.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© 2026 RB-Ventures LLC. RBV-Studio is the games brand of RB-Ventures LLC. Please wash your hands.</span>
+      <nav aria-label="Footer">
+        <a href="/penguin-hotel-tycoon/">Penguin Hotel Tycoon</a>
+        <a href="/mypootime/">MyPooTime</a>
+        <a href="/parents/">Parents</a>
+        <a href="/support/">Support</a>
+        <a href="/press/">Press</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+      <span class="fine">Not made or endorsed by Apple, Google or Roblox Corporation. App Store is a service mark of Apple Inc.; Google Play is a trademark of Google LLC; Roblox is a trademark of Roblox Corporation. This site sets no cookies and loads nothing from other sites.</span>
+    </div>
+  </footer>
+</body>
+</html>
