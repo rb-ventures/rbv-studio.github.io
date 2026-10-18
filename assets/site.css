@@ -46,7 +46,7 @@ p { margin: 0 0 1em; }
 .top { padding: 18px 0; }
 .top .wrap { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .brand { display: block; line-height: 0; }
-.brand img { height: 46px; width: auto; }
+.brand img { height: 38px; width: auto; }
 .top nav { margin-left: auto; display: flex; gap: 6px 22px; flex-wrap: wrap; font-family: var(--round); font-weight: 700; font-size: 16px; }
 .top nav a { color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
 .top nav a:hover, .top nav a[aria-current="page"] { border-bottom-color: var(--teal); }
@@ -132,10 +132,15 @@ p { margin: 0 0 1em; }
 .facts dd { margin: 0; color: var(--ink-soft); }
 .prose .downloads, .downloads { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
 .downloads li { margin: 0; }
-.downloads a { display: block; text-decoration: none; color: var(--ink); background: var(--frost); padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 var(--rule); }
-.downloads a:hover { box-shadow: 0 0 0 2px var(--teal); }
+.downloads > li > a { display: block; text-decoration: none; color: var(--ink); background: var(--frost); padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 var(--rule); }
+.downloads > li > a:hover { box-shadow: 0 0 0 2px var(--teal); }
 .downloads img { aspect-ratio: 16 / 10; object-fit: contain; background: var(--ice); border-radius: 3px; width: 100%; }
 .downloads span { display: block; padding: 8px 4px 2px; font-weight: 700; font-size: 15px; }
+.downloads li.file { background: var(--frost); padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 var(--rule); }
+.downloads li.file a.pic { padding: 0; box-shadow: none; background: none; }
+.downloads li.file a.pic:hover img { outline: 2px solid var(--teal); }
+.downloads li.file p { margin: 0; padding: 8px 4px 2px; font-size: 15px; }
+.downloads a.on-dark img { background: var(--night); }
 
 /* footer */
 footer.foot { border-top: 2px solid var(--rule); padding: 28px 0 40px; font-size: 15px; color: var(--ink-soft); }
@@ -158,7 +163,7 @@ footer.foot .fine { flex-basis: 100%; font-size: 14px; }
 @media (max-width: 560px) {
   .top .wrap { gap: 12px; }
   .top nav { margin-left: 0; width: 100%; gap: 4px 18px; font-size: 15px; }
-  .brand img { height: 40px; }
+  .brand img { height: 32px; }
   .postcard { transform: rotate(-1deg); padding: 10px 10px 14px; }
   .stamp { width: 96px; top: -22px; right: 12px; font-size: 12px; }
   .stamp svg { width: 38px; height: 38px; }
