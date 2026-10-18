@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rbv-studio.com/sitemap.xml

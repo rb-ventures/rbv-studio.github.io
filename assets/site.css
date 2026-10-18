@@ -1,0 +1,167 @@
+/* RBV-Studio — the studio's pages (home, parents, support, press, privacy, terms).
+   Ink and teal from the wordmark, snow from the island, lamp gold for the buttons that start play.
+   No web fonts, no third-party requests: rounded system faces where the device has them. */
+
+:root {
+  --ink: #1d1d1b;
+  --ink-soft: #4a5154;
+  --teal: #21a8b4;
+  --teal-text: #0f7781;
+  --snow: #f4f9fa;
+  --ice: #dceef1;
+  --frost: #ffffff;
+  --night: #14304a;
+  --lamp: #f2b84b;
+  --lamp-deep: #8a5a05;
+  --rule: #c9dde1;
+  --round: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --text: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--snow);
+  color: var(--ink);
+  font: 17px/1.6 var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--teal-text); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+/* type scale (1.25) */
+h1, h2, h3 { font-family: var(--round); line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(38px, 6.2vw, 64px); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: clamp(27px, 3.4vw, 34px); font-weight: 800; }
+h3 { font-size: 21px; font-weight: 750; }
+p { margin: 0 0 1em; }
+.lede { font-size: clamp(19px, 2.1vw, 22px); line-height: 1.5; color: var(--ink-soft); max-width: 36ch; }
+
+/* header */
+.top { padding: 18px 0; }
+.top .wrap { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.brand { display: block; line-height: 0; }
+.brand img { height: 46px; width: auto; }
+.top nav { margin-left: auto; display: flex; gap: 6px 22px; flex-wrap: wrap; font-family: var(--round); font-weight: 700; font-size: 16px; }
+.top nav a { color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.top nav a:hover, .top nav a[aria-current="page"] { border-bottom-color: var(--teal); }
+
+/* buttons */
+.button {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 24px; border-radius: 999px;
+  font-family: var(--round); font-weight: 800; font-size: 17px; text-decoration: none;
+  background: var(--lamp); color: var(--ink);
+  box-shadow: 0 5px 0 var(--lamp-deep);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.button:hover { color: var(--ink); transform: translateY(-2px); box-shadow: 0 7px 0 var(--lamp-deep); }
+.button:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--lamp-deep); }
+.button.quiet { background: transparent; box-shadow: inset 0 0 0 2px var(--ink); }
+.button.quiet:hover { box-shadow: inset 0 0 0 2px var(--ink); background: var(--frost); }
+.button svg { width: 20px; height: 20px; flex: none; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* home: the hero, with the first game as a postcard from the island */
+.hero { padding: 40px 0 88px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.08fr; gap: 56px; align-items: center; }
+.hero h1 { max-width: 12ch; margin-bottom: 22px; }
+
+.postcard {
+  position: relative; display: block; text-decoration: none; color: var(--ink);
+  background: var(--frost); padding: 14px 14px 18px; border-radius: 6px;
+  box-shadow: 0 1px 0 var(--rule), 0 22px 44px -18px rgb(20 48 74 / .45);
+  transform: rotate(-2deg);
+  transition: transform .25s ease;
+}
+.postcard:hover { color: var(--ink); transform: rotate(-1deg) translateY(-4px); }
+.postcard img { border-radius: 3px; aspect-ratio: 1600 / 858; object-fit: cover; width: 100%; }
+.postcard .line { display: grid; gap: 2px; padding: 14px 6px 0; }
+.postcard .line strong { font-family: var(--round); font-size: 22px; font-weight: 800; }
+.postcard .line span { color: var(--ink-soft); font-size: 15px; }
+.stamp {
+  position: absolute; top: -26px; right: 22px; width: 108px; padding: 6px;
+  background: var(--frost); text-align: center;
+  font-family: var(--round); font-weight: 800; font-size: 13px; line-height: 1.15; color: var(--night);
+  transform: rotate(6deg);
+  /* a perforated edge: holes along the border band, the middle kept whole */
+  -webkit-mask: radial-gradient(circle 3.5px, #0000 96%, #000) -6px -6px / 12px 12px, linear-gradient(#000 0 0) content-box;
+          mask: radial-gradient(circle 3.5px, #0000 96%, #000) -6px -6px / 12px 12px, linear-gradient(#000 0 0) content-box;
+  filter: drop-shadow(0 3px 5px rgb(20 48 74 / .25));
+}
+.stamp .face { background: var(--ice); padding: 8px 4px 7px; }
+.stamp svg { width: 46px; height: 46px; margin: 0 auto 4px; display: block; }
+[data-live="false"] .when-live, [data-live="true"] .when-soon { display: none; }
+
+/* sections */
+.band { padding: 72px 0; }
+.band.ice { background: var(--ice); }
+.band h2 { margin-bottom: 12px; }
+.band .intro { color: var(--ink-soft); max-width: 58ch; margin-bottom: 36px; }
+
+.promises { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
+.promises li { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 22px 0; border-top: 2px solid var(--rule); }
+.promises svg { width: 40px; height: 40px; color: var(--teal-text); }
+.promises h3 { margin: 4px 0 6px; }
+.promises p { margin: 0; color: var(--ink-soft); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.split h2 { margin-bottom: 12px; }
+.split p { color: var(--ink-soft); max-width: 46ch; }
+.mail { font-family: var(--round); font-weight: 800; font-size: 20px; }
+
+/* inner pages */
+.page { padding: 32px 0 80px; }
+.page header.title { padding: 24px 0 40px; border-bottom: 2px solid var(--rule); margin-bottom: 40px; }
+.page header.title h1 { font-size: clamp(36px, 5vw, 52px); margin-bottom: 14px; }
+.page header.title .lede { max-width: 52ch; margin: 0; }
+.prose { max-width: 68ch; }
+.prose h2 { font-size: 26px; margin: 44px 0 12px; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { font-size: 19px; margin: 28px 0 8px; }
+.prose ul { padding-left: 1.2em; margin: 0 0 1em; }
+.prose li { margin: 0 0 .45em; }
+.prose .small { font-size: 15px; color: var(--ink-soft); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 0 0 1em; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: 0; color: var(--ink-soft); }
+.prose .downloads, .downloads { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.downloads li { margin: 0; }
+.downloads a { display: block; text-decoration: none; color: var(--ink); background: var(--frost); padding: 10px; border-radius: 6px; box-shadow: 0 1px 0 var(--rule); }
+.downloads a:hover { box-shadow: 0 0 0 2px var(--teal); }
+.downloads img { aspect-ratio: 16 / 10; object-fit: contain; background: var(--ice); border-radius: 3px; width: 100%; }
+.downloads span { display: block; padding: 8px 4px 2px; font-weight: 700; font-size: 15px; }
+
+/* footer */
+footer.foot { border-top: 2px solid var(--rule); padding: 28px 0 40px; font-size: 15px; color: var(--ink-soft); }
+footer.foot .wrap { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; }
+footer.foot nav { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+footer.foot .fine { flex-basis: 100%; font-size: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .button, .postcard { transition: none; }
+  .postcard:hover { transform: rotate(-2deg); }
+}
+
+@media (max-width: 860px) {
+  .hero { padding: 16px 0 64px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 56px; }
+  .promises, .split { grid-template-columns: 1fr; gap: 0 0; }
+  .split { gap: 40px; }
+  .band { padding: 56px 0; }
+}
+@media (max-width: 560px) {
+  .top .wrap { gap: 12px; }
+  .top nav { margin-left: 0; width: 100%; gap: 4px 18px; font-size: 15px; }
+  .brand img { height: 40px; }
+  .postcard { transform: rotate(-1deg); padding: 10px 10px 14px; }
+  .stamp { width: 96px; top: -22px; right: 12px; font-size: 12px; }
+  .stamp svg { width: 38px; height: 38px; }
+  .facts { grid-template-columns: 1fr; gap: 2px; }
+  .facts dd { margin-bottom: 10px; }
+}
