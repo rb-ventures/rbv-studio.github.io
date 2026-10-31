@@ -95,9 +95,8 @@
         <p>When a new phone is added to your account, your other phones get a notice, so you can retire it if it was not you. You can see and retire your phones in Settings → Account → Devices.</p>
         <p><strong>Linking Apple or Google (optional).</strong> You can link an Apple or Google account, so a new phone can find your account and your progress.</p>
         <ul>
-          <li><strong>Google:</strong> Google sends us a sign-in token with your Google account's ID, email address and name. We keep the account ID, the email address and whether Google has verified it. We do not keep your name.</li>
-          <li><strong>Apple:</strong> we ask Apple for no name. We keep the ID Apple gives us for your Apple account and, if Apple shares one, the email address (this can be a private relay address that hides your real one). We also keep an Apple sign-in token, encrypted, so we can cancel your Apple sign-in for this app when you delete your account.</li>
-          <li>We never show this email address to other people, and we never use it for marketing.</li>
+          <li><strong>Google:</strong> Google sends us a sign-in token with your Google account's ID, email address and name. We keep only the account ID. We do not store your email address or name.</li>
+          <li><strong>Apple:</strong> we ask Apple for no name and no email address. We keep the ID Apple gives us for your Apple account, and an Apple sign-in token, encrypted, so we can cancel your Apple sign-in for this app when you delete your account.</li>
           <li>Accounts are matched only by that ID, never by email address.</li>
           <li><strong>Your progress copy.</strong> While you have a linked account, the app keeps one copy of your progress on our server so you can restore it on a new phone. It holds your points totals, counts such as your number of sessions and games, your streak (with the date of your last session) and longest streak, badges and the month you earned them, avatars, game levels and bests, your Poofile choices, and code grants with their end dates. It holds no session times, no session history and no time zone. It is encrypted on our server, but it is not end-to-end encrypted: we hold the key.</li>
         </ul>
@@ -201,7 +200,7 @@
         <ul>
           <li><strong>On your phone:</strong> until you erase it, uninstall without keeping data, or delete it with your account.</li>
           <li><strong>Account, username, keys, profile and friends:</strong> until you delete your account. We do not delete accounts automatically when they go unused.</li>
-          <li><strong>Linked Apple or Google sign-in</strong> (the account ID and email address): until you unlink it or delete your account.</li>
+          <li><strong>Linked Apple or Google sign-in</strong> (the account ID): until you unlink it or delete your account.</li>
           <li><strong>Progress copy:</strong> until you delete your account.</li>
           <li><strong>Push tokens:</strong> until you sign out on that phone, delete your account, or Google says the token no longer works.</li>
           <li><strong>Messages:</strong> until the sender deletes them. Deleted messages leave a note that we remove after 30 days.</li>
