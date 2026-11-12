@@ -35,7 +35,7 @@
     <div class="wrap">
       <header class="title">
         <h1>MyPooTime Privacy Policy</h1>
-        <p class="lede">What MyPooTime keeps, where it keeps it, and the choices you have. Last updated 8 November 2026.</p>
+        <p class="lede">What MyPooTime keeps, where it keeps it, and the choices you have. Last updated 11 November 2026.</p>
       </header>
       <div class="prose">
         <h2>Who we are</h2>
@@ -48,12 +48,12 @@
 
         <h2>The short version</h2>
         <ul>
-          <li><strong>Your sessions stay on your phone.</strong> When you go, how long, and your session history never go to our server. If you link an Apple or Google account, we keep a copy of your progress totals (never your session history), so you can restore it on a new phone.</li>
+          <li><strong>Your sessions stay on your phone.</strong> When you go, how long, and your session history never go to our server. If you share on the map, our server knows you are in a session while you share, and forgets it when the session ends.</li>
           <li><strong>You can use the whole solo app without an account.</strong> No sign-up, no password, no email address.</li>
           <li><strong>The social features are optional and from age 13 only.</strong> Friends, chat, leaderboards and the map need an optional account. You make it with a username, the first time you use one of them.</li>
           <li><strong>Children under 13 send nothing to our server.</strong> They get the solo app, without any social features.</li>
           <li><strong>The map never shows your exact location.</strong> If you choose to share during a session, people using the map see your username, avatar, mood and status, badge count, country flag if you set one, and an area about 30 km across. We keep that area for at most 15 minutes after your last update.</li>
-          <li><strong>Ads are never personalised.</strong> For under-13s they are made for children.</li>
+          <li><strong>No ads.</strong> The app shows no ads and contains no ads software.</li>
           <li><strong>No analytics and no crash-reporting tools.</strong></li>
           <li><strong>No account is ever needed to export, import or erase your data.</strong> If you have an account, you can delete it in the app or on our website.</li>
         </ul>
@@ -77,34 +77,33 @@
         <p>When you first open the app, it asks for the month and year you were born. It does not say what answer unlocks what.</p>
         <ul>
           <li>The app works out your age group from your answer, then throws the month and year away. Only the age group is saved, on your phone. We never send it to our server.</li>
-          <li>If you are under 13, the app also keeps the month you turn 13. That stays on the phone and is not part of any backup. In that month, the app offers you the social features, with our terms.</li>
-          <li>In some places the law requires app stores to share an age range with apps. Where Google Play gives the app such a signal, the app uses it only to apply the age rules in this policy, and the stricter answer wins. The signal is not sent to our server and is never used for ads.</li>
-          <li>If Google Play tells the app that a parent has not yet approved an update, the social features pause until they do. The solo app keeps working and nothing is deleted.</li>
+          <li>If you are under 13, the app also keeps the month you turn 13. That stays on the phone and is not part of any backup. In that month, the app offers you the social features, with our Community Rules.</li>
         </ul>
 
         <h2>The optional account (13 and over)</h2>
-        <p>The solo app needs no account. The account is made only when you first use a social feature: adding a friend, sending or using an invite, chat, the leaderboards, opening someone's card on the map, or sharing on the map or with friends. Before that, you choose a username and agree to our Terms of Service and <a href="/mypootime/community-rules/">Community Rules</a>.</p>
+        <p>The solo app needs no account. The account is made only when you first use a social feature: adding a friend, sending or using an invite, chat, the leaderboards, opening someone's card on the map, or sharing on the map. Before that, you choose a username and agree to our <a href="/mypootime/community-rules/">Community Rules</a>.</p>
         <p>Your account is a security key made on your phone. You do not need a password, email address or phone number. Our server keeps:</p>
         <ul>
-          <li><strong>Your username.</strong> 3 to 20 letters, numbers or underscores. You can change it once every 30 days. Usernames are checked against a list of words that are not allowed.</li>
+          <li><strong>Your username.</strong> 3 to 20 letters, numbers or underscores. Usernames are checked against a list of words that are not allowed.</li>
           <li><strong>Your account's public key</strong> and the public keys of the phones you added. The private key never leaves your phones.</li>
-          <li><strong>Your phones.</strong> For each phone: a random install ID, whether it is Android or iPhone, the app version, when it was last seen, its push notification token, and the result of a Google Play integrity check (see below).</li>
+          <li><strong>Your phones.</strong> For each phone that gets push notifications: a random install ID, that it is an Android phone, the app version, when it was last seen, its push notification token, your quiet hours and your time zone's offset from UTC. For each phone that plays online games: the public half of its score key (see "Checks that scores are genuine").</li>
           <li><strong>Your published profile.</strong> The avatar you wear, your mood and status, your country if you set one, and your current streak and badge count. You can hide your streak and badge count from others.</li>
-          <li><strong>Account details.</strong> When you made the account, when it last signed in, which version of the terms you accepted, whether others can find you by username (on unless you turn it off), and a scrambled form of your deletion code.</li>
+          <li><strong>Account details.</strong> When you made the account, when it last signed in, which version of the Community Rules you accepted, and your deletion code, both encrypted and in a scrambled form.</li>
         </ul>
         <p>When a new phone is added to your account, your other phones get a notice, so you can retire it if it was not you. You can see and retire your phones in Settings → Account → Devices.</p>
-        <p><strong>Linking Apple or Google (optional).</strong> You can link an Apple or Google account, so a new phone can find your account and your progress.</p>
+        <p><strong>Linking Google (optional).</strong> In Settings → Account you can link a Google account to your account.</p>
         <ul>
-          <li><strong>Google:</strong> Google sends us a sign-in token with your Google account's ID, email address and name. We keep only the account ID. We do not store your email address or name.</li>
-          <li><strong>Apple:</strong> we ask Apple for no name and no email address. We keep the ID Apple gives us for your Apple account, and an Apple sign-in token, encrypted, so we can cancel your Apple sign-in for this app when you delete your account.</li>
+          <li>Google sends us a sign-in token with your Google account's ID, email address and name. We keep only the account ID. We do not store your email address or name.</li>
           <li>Accounts are matched only by that ID, never by email address.</li>
-          <li><strong>Your progress copy.</strong> While you have a linked account, the app keeps one copy of your progress on our server so you can restore it on a new phone. It holds your points totals, counts such as your number of sessions and games, your streak (with the date of your last session) and longest streak, badges and the month you earned them, avatars, game levels and bests, your Poofile choices, and code grants with their end dates. It holds no session times, no session history and no time zone. It is encrypted on our server, but it is not end-to-end encrypted: we hold the key.</li>
+          <li>Linking stores no copy of your progress.</li>
+          <li>You can unlink Google in Settings → Account. We then delete the ID.</li>
         </ul>
-        <p>If you sign out of a linked account on a phone, its key is removed from that phone. You can sign in again later.</p>
+        <p><strong>Restoring your account (linked accounts only).</strong> On a new phone, or after you sign out, choose Restore from a Linked Account in Settings → Account, or Restore My Account when you first open the app. You sign in with the Google account you linked. Google sends us a sign-in token, and we use only its account ID to find your account. The phone sends the public half of its new security key, signed by that key, and our server adds it to your account. Your username, friends and chats come back. Your progress does not: it is not on our server. Progress comes back with your phone's Google backup or transfer, or with an export file. Your other phones get a notice that a new phone was added.</p>
+        <p><strong>Signing out of this phone (linked accounts only).</strong> Settings → Account → Sign Out of This Phone is there only while Google is linked, because Restore is the way back. Our server deletes this phone's push registration (its install ID, push token, quiet hours and time zone offset). On the phone, the app deletes the push token, its sign-in to our server, the score key's ID, the security key (with its Block Store copy), its Google sign-in state, your map sharing and the copy of your friends and chats. Your progress, settings and reminders stay on the phone. Our server keeps the account and this phone's public key; you can remove that key from another phone in Devices.</p>
 
         <h2>Friends, invites and chat (13 and over)</h2>
-        <p><strong>Friends.</strong> You can add a friend with an invite link or QR code, by their exact username (if they allow it), or from their card on the map. A friend request must be accepted before you can chat. Our server keeps your friends, your sent and received requests, and when they were made. If someone declines your request, you cannot send another for 30 days.</p>
-        <p><strong>Invites.</strong> An invite link works for 7 days and up to 20 times, and you can cancel it in Settings. Someone who opens it sends you a friend request, which you accept. You can choose to accept invite requests automatically; this is off unless you turn it on. Our server keeps a scrambled form of each invite, and deletes it 30 days after it expires.</p>
+        <p><strong>Friends.</strong> You can add a friend with an invite link or QR code, by their exact username, or from their card on the map. Anyone who types your exact username can find you. A friend request must be accepted before you can chat. Our server keeps your friends, your sent and received requests, and when they were made. If someone declines your request, you cannot send another for 30 days.</p>
+        <p><strong>Invites.</strong> An invite link works for 7 days and up to 20 times. Someone who opens it sends you a friend request, which you accept. Our server keeps a scrambled form of each invite, and deletes it 30 days after it expires.</p>
         <p><strong>Chat.</strong> You can chat with friends one to one, and in groups of up to 24 people. Groups are by invitation: each person accepts before they join. A message is text (up to 1,000 characters) or a sticker from the app.</p>
         <ul>
           <li>Messages are stored on our server so they reach the other people in the chat. They are not end-to-end encrypted.</li>
@@ -115,7 +114,7 @@
         <p><strong>Mute and Block.</strong> Mute hides a person's map avatar and card from you, and silences their notifications and messages to you. They are not told. Block is stronger: it removes the friendship, neither of you can find, message or add the other, and you no longer see each other on the map. Our server keeps your blocks and mutes until you undo them or one of you deletes the account.</p>
 
         <h2>Reports and moderation (13 and over)</h2>
-        <p>You can report a person, a message, a group, a leaderboard score or an ad. You pick a reason and can add details (up to 1,000 characters). Our server keeps the report and a copy of what you reported, so we can review it even if it changes. The reported item is hidden for you at once.</p>
+        <p>You can report a person, a message or a group. You pick a reason and can add details (up to 1,000 characters). Our server keeps the report and a copy of what you reported, so we can review it even if it changes. The reported item is hidden for you at once.</p>
         <ul>
           <li>We review reports ourselves. We aim to review reports within 72 hours. Reports about child safety, harassment and self-harm alert us at once.</li>
           <li>A message reported by three different people within 24 hours is hidden for everyone until we review it.</li>
@@ -126,66 +125,51 @@
         </ul>
 
         <h2>Leaderboards (13 and over)</h2>
-        <p>Each game has a friends board and a weekly global board. The friends board shows each friend's best score per game. The global board is opt-in: you appear on it only if you turn it on. People on the global board can see the top players' usernames and avatars.</p>
-        <p>When you play a game online with an account, the app asks our server for a one-time run code before the game starts. When the game ends, it sends the score, how long the game took, the game's settings and, for some games, the moves you made, so our server can replay the game and check the score. It is signed by your phone and comes with a Google Play integrity check.</p>
+        <p>Each game has a weekly friends board and a weekly global board. The friends board shows each friend's best score this week. The global board is opt-in: you appear on it only if you turn it on. People on the global board can see the top players' usernames and avatars.</p>
+        <p>When you play a game online with an account, the app asks our server for a one-time run code before the game starts. When the game ends, it sends the score, how long the game took, the game's settings and counters, whether the phone's clock could be trusted and, for some games, the moves you made, so our server can replay the game and check the score. It is signed with your phone's score key.</p>
         <ul>
           <li>Run codes are deleted after 7 days.</li>
-          <li>Weekly scores are deleted 30 days after the week ends. Your best score per game on the friends board is kept until you delete your account.</li>
+          <li>Weekly scores are deleted 30 days after the week ends. Your best score per game of all time is kept until you delete your account.</li>
           <li>The moves are kept only until the score is checked.</li>
           <li>A score that fails a check is hidden and kept for 30 days so we can review it.</li>
         </ul>
         <p>Without an account, your games, scores and bests stay on your phone.</p>
 
         <h2>The map (13 and over)</h2>
-        <p>The map shows how many people are in a session in your area, your region and the world. You can look at it without sharing anything.</p>
-        <p><strong>Looking at your area.</strong> To show who is active around you, the app first tells you what it needs, then Android asks for permission to use your approximate location. If you allow it, your phone turns your approximate location into an area about 30 km across and sends only that area to our server when you open the map or recentre it. We use it to answer that request and do not store it or write it to our logs. It is never sent in the background. If you choose "World View Only" or decline, you see the world count only and no area is sent.</p>
+        <p>The map shows how many people are in a session around the world. You can look at it without sharing anything. Looking at the map sends no location.</p>
         <p><strong>Sharing is off until you turn it on.</strong> The switch is "Show me on the map during sessions". Before you turn it on, the app tells you what is shared and who sees it. Only then does Android ask for permission to use your approximate location. The app never asks for your precise location.</p>
         <p><strong>What is sent.</strong> When you start a session with sharing on, your phone reads your approximate location once, while the app is open. It turns it into an area about 30 km across, on your phone, and sends only that area, with the avatar you wear. Your coordinates never leave your phone. While the app is open, it refreshes this at most every 5 minutes. Nothing is sent while your phone is locked or the app is in the background.</p>
         <p><strong>What other people see.</strong> We never store your exact location or any location history. While you share during a session, people using the map can see your username, avatar, mood and status, badge count, your country flag if you set one, and which area about 30 km across you are in. They are not only people near you. Your avatar is drawn at a made-up spot inside that area, never as a pin. People with an account can tap your avatar to open your card and send you a friend request. Your badge count is left out if you hid your stats. Friends see your full friend card.</p>
         <p><strong>How long we keep it.</strong> We keep that area only for up to 15 minutes after your last update. It is deleted when you end the session, when it ends on its own, or when you turn sharing off. There is no history. It is not in our backups or our logs.</p>
-        <p><strong>Telling friends.</strong> A separate switch, "Tell my friends when I start a session", shows "In a session" to your friends. Friends who turned on "Friends active now" get one notification for several friends at a time. On its own, this switch sends no area. Both switches are off until you turn them on.</p>
-        <p><strong>The map pictures.</strong> The map pictures come from <strong>OpenFreeMap</strong>, a free map service run by Hyperknot Software Kft. in Hungary, using OpenStreetMap data. To draw the map, your phone asks OpenFreeMap for the part of the map on your screen. OpenFreeMap therefore sees your IP address and that part of the map. The app does not let you zoom in closer than a regional level. If OpenFreeMap is not available, the app may load the same map pictures from a copy we host.</p>
+        <p><strong>The map pictures.</strong> The map pictures come from <strong>OpenFreeMap</strong>, a free map service run by Hyperknot Software Kft. in Hungary, using OpenStreetMap data. To draw the map, your phone asks OpenFreeMap for the part of the map on your screen. OpenFreeMap therefore sees your IP address and that part of the map. The app does not let you zoom in closer than a regional level.</p>
 
         <h2>Push notifications (13 and over, with an account)</h2>
         <p>When you have an account, the app registers your phone for push notifications through <strong>Google's Firebase Cloud Messaging</strong>. Google gives the app a token for this phone, and our server keeps it. Firebase also gives each install an ID and receives the app version.</p>
         <ul>
-          <li>We send pushes only for things other people do: friend requests, accepted requests, invites used, messages, group invitations, friends starting a session (if you turned that on), and notices about your account.</li>
+          <li>We send pushes only for things other people do: friend requests, accepted requests, invites used, messages, group invitations, and notices about your account.</li>
           <li>A push holds only a type and IDs. Your phone writes the words. Message text is not sent through Google.</li>
-          <li>Our server keeps your quiet hours so it does not push during them, and never pushes from someone you blocked or muted.</li>
+          <li>Our server keeps your quiet hours and your time zone's offset from UTC so it does not push during them, and never pushes from someone you blocked or muted.</li>
           <li>You can turn each kind off in Android's notification settings.</li>
-          <li>A phone's token is deleted when you sign out on that phone, when you delete your account, or when Google says it no longer works.</li>
+          <li>A phone's token is deleted when you sign out on that phone, when you delete your account, or when Google says it no longer works, for example after you erase the app's data on that phone.</li>
         </ul>
         <p>Other notifications are made by the app on your phone, and nothing is sent from a server: the session timer, the automatic end of a session, your daily reminder, a streak-at-risk warning, badges, freezes and challenges, and the weekly recap. The app asks for notification permission once, at your first session. You can turn notifications off in Settings or in your phone's settings.</p>
 
-        <h2>Checks that the app is genuine (13 and over)</h2>
-        <p>To keep leaderboards fair and stop abuse, the app uses <strong>Google Play Integrity</strong> when it registers a phone for your account and when it sends a leaderboard score. The app asks Google to confirm that it is the real app from Google Play, on a genuine device. Google receives details about the app (name, version, signing certificate), its Google Play licence, and the device. Our server receives Google's answer and keeps a summary of it with your phone's key. A phone that fails the check can still play; its scores may be held back from the leaderboards.</p>
-        <p>The app also makes a key in your phone's secure hardware to sign scores. It never leaves the phone.</p>
+        <h2>Checks that scores are genuine (13 and over)</h2>
+        <p>To keep leaderboards fair, the app makes a key in your phone's secure hardware and signs online game scores with it. The key never leaves the phone. Our server keeps its public half with your account, to check the signatures. The app does not use Google Play Integrity.</p>
 
         <h2>Ads</h2>
-        <p>MyPooTime shows ads from <strong>Google AdMob</strong>. You see an ad only when you choose to (for example to continue a game or earn points), or after a game when you tap Play Again. There are no ads on the home screen, during a session, or when you leave a game. Premium and ad-free days remove ads.</p>
-        <ul>
-          <li><strong>Ads are non-personalised for everyone.</strong> They are not based on what you do in other apps or on the web.</li>
-          <li><strong>Users 13 and over</strong> get ads rated for teens, with Google's age-restricted treatment.</li>
-          <li><strong>Users under 13</strong> get only ads made for children: Google's child-directed treatment, rated for all ages, not personalised.</li>
-          <li><strong>The app cannot read your phone's advertising ID.</strong> We removed that permission from the app.</li>
-          <li><strong>Consent.</strong> Where the law requires it (for example in the EU, the UK and Switzerland), the app shows Google's consent screen before any ad. For users aged 13 to 15 there, the request tells Google the user is under the age of consent. You can change your choice in Settings → Safety → Privacy options when it is shown there.</li>
-        </ul>
-        <p><strong>What AdMob receives.</strong> When the app asks for an ad, Google's ads software collects your IP address (which Google says may be used to estimate your general location), how you interact with ads and the app (such as app launches, taps and video views), technical information (such as app launch time, hang rate and energy use) and device identifiers other than the advertising ID. Google uses this for advertising, analytics and fraud prevention, under Google's own policies. We do not send Google your username, your progress or anything from your account.</p>
+        <p>MyPooTime shows no ads. The app contains no ads software, and it cannot read your phone's advertising ID: we removed that permission from the app.</p>
 
         <h2>Premium and purchases</h2>
-        <p>Premium is a subscription sold by <strong>Google Play</strong>. Google handles the payment. We never see your card or payment details.</p>
-        <ul>
-          <li>The app asks Google Play on your phone whether you have Premium. Our server never knows who has Premium.</li>
-          <li>You manage and cancel the subscription in Google Play. Deleting your account does not cancel it.</li>
-          <li>For users under 13, the app shows no offers to buy. Premium is only in Settings, and Google's family settings can ask a parent to approve.</li>
-        </ul>
-        <p><strong>Redemption codes (13 and over).</strong> A code can give points, an avatar pack, Premium days or ad-free days. You do not need an account to use one. The app sends the code with your phone's public key. Our server marks the code as used and keeps the code, a fingerprint of that key, whether you use Android or iPhone, the time and the first part of your IP address, for one year. It sends back a signed receipt that your phone checks. Codes are not available to users under 13.</p>
+        <p>Premium is not on sale yet. The app contains no payment software and sells nothing. Nothing about payments is collected.</p>
+        <p><strong>Redemption codes (13 and over).</strong> A code can give points, an avatar pack, Premium days or ad-free days. You do not need an account to use one. The app sends the code with your phone's public key. Our server marks the code as used and keeps the code, a fingerprint of that key, that you use Android, and the time, for one year. We don't keep IP address logs. When you redeem a code we store a shortened part of your network address, to stop abuse, for 14 days. It sends back a signed receipt that your phone checks. Codes are not available to users under 13.</p>
 
         <h2>Our server, its logs and security</h2>
         <p>Our server answers at <strong>api.mypootime.com</strong>, and invite links at <strong>link.mypootime.com</strong>. Only people aged 13 and over use it from the app (for the social features, the map and codes), and people who open an invite link.</p>
         <ul>
-          <li><strong>Logs.</strong> The server logs each request's type, the page asked for, the result and the time it took. Logs may include a shortened IP address. They never include what you sent, message text, your map area or your sign-in tokens. Logs are deleted after 14 days.</li>
-          <li><strong>Security.</strong> Connections to our server are encrypted (HTTPS). The progress copy and the Apple sign-in token are encrypted on the server. Backups are encrypted before they leave it. Requests are limited so the service cannot be used to collect usernames in bulk. Only we can run moderation and admin tasks, and only through a secure connection to the server, not a website.</li>
+          <li><strong>IP addresses.</strong> We don't keep IP address logs. When you redeem a code we store a shortened part of your network address, to stop abuse, for 14 days.</li>
+          <li><strong>Logs.</strong> The server logs each request's type, the page asked for, the result and the time it took. Logs never include what you sent, message text, your map area or your sign-in tokens. Old log lines are deleted as new ones are written: each part of the server keeps at most 50 MB of logs.</li>
+          <li><strong>Security.</strong> Connections to our server are encrypted (HTTPS). Your deletion code is encrypted on the server. Backups are encrypted before they leave it. Requests are limited so the service cannot be used to collect usernames in bulk. Only we can run moderation and admin tasks, and only through a secure connection to the server, not a website.</li>
           <li><strong>No analytics, no crash reporting.</strong> The app contains no analytics or crash-reporting tools. Google Play gives developers reports about app crashes and performance under Google's own terms, and we use them to fix problems.</li>
         </ul>
 
@@ -201,19 +185,18 @@
         <ul>
           <li><strong>On your phone:</strong> until you erase it, uninstall without keeping data, or delete it with your account.</li>
           <li><strong>Account, username, keys, profile and friends:</strong> until you delete your account. We do not delete accounts automatically when they go unused.</li>
-          <li><strong>Linked Apple or Google sign-in</strong> (the account ID): until you unlink it or delete your account.</li>
-          <li><strong>Progress copy:</strong> until you delete your account.</li>
+          <li><strong>Linked Google sign-in</strong> (the account ID): until you unlink it or delete your account.</li>
           <li><strong>Push tokens:</strong> until you sign out on that phone, delete your account, or Google says the token no longer works.</li>
           <li><strong>Messages:</strong> until the sender deletes them. Deleted messages leave a note that we remove after 30 days.</li>
           <li><strong>Blocks and mutes:</strong> until you undo them, or one of you deletes the account.</li>
           <li><strong>Invites:</strong> 30 days after they expire.</li>
           <li><strong>Map area:</strong> at most 15 minutes after your last update.</li>
-          <li><strong>Leaderboards:</strong> run codes 7 days; weekly scores 30 days after the week; friends-board bests until you delete your account.</li>
+          <li><strong>Leaderboards:</strong> run codes 7 days; weekly scores 30 days after the week; all-time bests until you delete your account.</li>
           <li><strong>Reports:</strong> while open. After a report is resolved, its details and the copy of the reported content are deleted after 90 days, and the people in it are replaced by a scrambled code.</li>
           <li><strong>Moderation records</strong> (what action was taken, and why): 2 years. <strong>Notices</strong> shown to a user: 1 year.</li>
-          <li><strong>Code redemptions:</strong> 1 year.</li>
+          <li><strong>Code redemptions:</strong> 1 year. The shortened network address stored with one: 14 days.</li>
           <li><strong>Deletion requests</strong> (from our website or by email): 90 days after we handle them.</li>
-          <li><strong>Server logs:</strong> 14 days.</li>
+          <li><strong>Server logs:</strong> until newer log lines replace them (at most 50 MB for each part of the server).</li>
           <li><strong>Server backups:</strong> 30 days, and in any case deleted within 35 days.</li>
           <li><strong>Content kept longer when the law requires it.</strong> When a report needs it, for example a child-safety report, we keep the report's copy of the content, the messages it points to and a minimal record of the reported account (its ID, its username at the time and its public key) for as long as needed. Every child-safety report is kept this way for at least 30 days.</li>
         </ul>
@@ -232,7 +215,6 @@
         <ul>
           <li><strong>Export</strong> saves your progress to a file you choose: <code>mypootime-progress-&lt;date&gt;.json.gz</code>. The file holds your full history in the app (sessions, points, badges, challenges, game results, Studio unlocks), your Poofile choices (avatar, mood, status line, country), one of the two random IDs, your time zone, technical clock details the app uses to check its own timekeeping, and the public half of your security key, which lets the app check the file's signature. It never contains the security key itself or your age group. <strong>If you have an account and export while online, the file also contains your account's deletion code.</strong> Anyone with the file can use it to ask us to delete your account, so keep it private. You decide where the file goes.</li>
           <li><strong>Import</strong> reads a file you pick. It adds to your progress and never deletes anything.</li>
-          <li><strong>Download my server data</strong> (Settings → Data, with an account) gives you what our server holds about you: your profile, your friends' usernames, the messages you sent, your blocks and the reports you made.</li>
           <li><strong>Share</strong> creates a card for your Poofile, a joke, a fact or your weekly recap. It shows your avatar and stats, never your name. It has a link to our website and, if you have an account, can carry your invite link. It goes only to the app you pick in your phone's share menu.</li>
         </ul>
         <p>We never see these files or cards unless you send them to us.</p>
@@ -240,20 +222,20 @@
         <h2>Permissions the app uses</h2>
         <ul>
           <li><strong>Notifications.</strong> For the reminders and messages above.</li>
-          <li><strong>Approximate location.</strong> Only for the map: to show who is active in your area, and, if you turn it on, to share your area during sessions. Only while the app is open. Never precise location, never in the background.</li>
+          <li><strong>Receive push messages.</strong> Lets Google Play services deliver push notifications to the app.</li>
+          <li><strong>Approximate location.</strong> Only for the map, and only if you turn on sharing: to share your area during sessions. Only while the app is open. Never precise location, never in the background.</li>
           <li><strong>Run at startup.</strong> So reminders still work after your phone restarts.</li>
           <li><strong>Internet and network state.</strong> To reach our server, Google's services and the map, and to know whether your phone is online.</li>
-          <li><strong>Keep awake briefly.</strong> Comes from the Android library that updates the home-screen streak widget, so an update can finish. It does not keep your screen on.</li>
+          <li><strong>Keep awake briefly.</strong> Comes from the Android libraries that update the home-screen streak widget and deliver push notifications, so their work can finish. It does not keep your screen on.</li>
         </ul>
 
         <h2>Children</h2>
         <p>MyPooTime can be used by children under 13 in a solo mode.</p>
         <ul>
-          <li><strong>We collect nothing from children under 13.</strong> For them, the app never contacts our server: no account, no username, no ID, no location, no push token, no integrity check. Their data stays on their phone, and in the phone's own Google backup if it is on.</li>
+          <li><strong>We collect nothing from children under 13.</strong> For them, the app never contacts our server: no account, no username, no ID, no location, no push token. Their data stays on their phone, and in the phone's own Google backup if it is on.</li>
           <li><strong>No social features.</strong> Friends, invites, chat, leaderboards, the map and redemption codes are locked, and say "Unlocks at 13". Game bests stay on the phone.</li>
-          <li><strong>Ads</strong> are only ads made for children: Google's child-directed treatment, rated for all ages, not personalised. Only optional ads and ads after a game's Play Again appear.</li>
-          <li><strong>No offers to buy.</strong> Premium is only reachable from Settings.</li>
-          <li><strong>At 13</strong>, the app offers the social features with our terms. Nothing changes unless the user accepts.</li>
+          <li><strong>No ads and no offers to buy.</strong></li>
+          <li><strong>At 13</strong>, the app offers the social features with our Community Rules. Nothing changes unless the user accepts.</li>
           <li><strong>A parent can delete a child's data</strong> on the phone at any time: Settings → Data → <strong>Erase data on this phone</strong>.</li>
           <li>If we learn that an account belongs to someone under 13, we delete it and its data.</li>
           <li>Parents can contact us at <a href="mailto:support@rbv-studio.com">support@rbv-studio.com</a>.</li>
@@ -266,9 +248,8 @@
           <li>your age group and, for users under 13, the month you turn 13;</li>
           <li>the security key and its Block Store copy. If Google Play services cannot be reached, the app keeps retrying that delete and never uses the old key again.</li>
         </ul>
-        <p>Erasing the phone does not delete an account on our server. If you have one, delete it first. If your account is not linked to Apple or Google, the app warns you that your friends and chats cannot be recovered once the key is gone.</p>
-        <p><strong>Delete account</strong> (Settings → Account → Delete account). It works even if your account is suspended. The app explains what is deleted, asks you to confirm, and then asks whether to also erase your progress on this phone or keep it. Deleting your account does not cancel a Premium subscription; cancel it in Google Play.</p>
-        <p>When you delete your account, we delete at once: your username, keys, phones and push tokens, profile, friends, blocks and mutes, invites, map area, leaderboard scores, progress copy, terms acceptances, notices and linked sign-ins (we cancel your Apple sign-in first). In shared chats your messages show as "Deleted user" with the text removed, and we remove those notes after 30 days. A group you own passes to the member who has been in it longest. What we keep:</p>
+        <p>Erasing the phone does not delete an account on our server. If you have one, delete it first. If your account is not linked to Google, the app warns you that your friends and chats cannot be recovered once the key is gone.</p>
+        <p><strong>Delete account</strong> (Settings → Account → Delete account). It works even if your account is suspended. The app explains what is deleted, asks you to confirm, and then asks whether to also erase your progress on this phone or keep it. When you delete your account, we delete at once: your username, keys, phones and push tokens, profile, friends, blocks and mutes, invites, map area, leaderboard scores, Community Rules acceptances, notices and your linked Google sign-in. In shared chats your messages show as "Deleted user" with the text removed, and we remove those notes after 30 days. A group you own passes to the member who has been in it longest. What we keep:</p>
         <ul>
           <li>reports about you or by you, with your account replaced by a scrambled code, until their 90 days run out, or longer when the law requires it (see "How long we keep things");</li>
           <li>a record that an account was deleted, with no personal details, and a scrambled code of the account's ID so a restored backup cannot bring it back;</li>
@@ -280,20 +261,20 @@
 
         <h2>Why we use your data</h2>
         <ul>
-          <li><strong>To give you the features you ask for:</strong> your account, friends, chat, the map, leaderboards, push notifications, the progress copy and codes. This is needed to provide the service you use.</li>
-          <li><strong>To keep the app safe and fair:</strong> moderation, reports, blocking, integrity checks, request limits, logs and backups. We have a legitimate interest in this, and some of it the law requires.</li>
-          <li><strong>With your consent:</strong> sharing your area on the map, telling friends you are in a session, and ad consent where the law asks for it. You can turn these off at any time.</li>
+          <li><strong>To give you the features you ask for:</strong> your account, friends, chat, the map, leaderboards, push notifications and codes. This is needed to provide the service you use.</li>
+          <li><strong>To keep the app safe and fair:</strong> moderation, reports, blocking, score checks, request limits, logs and backups. We have a legitimate interest in this, and some of it the law requires.</li>
+          <li><strong>With your consent:</strong> sharing your area on the map. You can turn it off at any time.</li>
           <li><strong>To meet legal duties:</strong> keeping content when the law requires it, and answering lawful requests.</li>
         </ul>
-        <p>We do not sell your personal information. We do not use it, or share it, for personalised advertising.</p>
+        <p>We do not sell your personal information. We do not use it, or share it, for advertising.</p>
 
         <h2>Your rights</h2>
-        <p>Wherever you live, you can ask us what data we hold about you, and ask us to correct or delete it. Much of this you can do yourself in the app: <strong>Download my server data</strong>, <strong>Export my progress</strong>, edit your Poofile, and <strong>Delete account</strong>.</p>
+        <p>Wherever you live, you can ask us what data we hold about you, and ask us to correct or delete it. Much of this you can do yourself in the app: <strong>Export my progress</strong>, edit your Poofile, and <strong>Delete account</strong>.</p>
         <ul>
           <li><strong>In the EU, the UK and Switzerland</strong> (the GDPR, the UK GDPR and the Swiss Federal Act on Data Protection), you also have the right to receive your data in a portable form, to object to or restrict some uses, and to withdraw consent at any time. You can complain to your data protection authority.</li>
           <li><strong>In US states with privacy laws</strong> (such as California), you can ask to know, correct and delete the personal information we hold about you. We do not sell personal information or share it for targeted advertising.</li>
         </ul>
-        <p>Write to <a href="mailto:support@rbv-studio.com">support@rbv-studio.com</a>. Because an account needs no email or password, we may ask you to prove it is yours, with your deletion code or a sign-in with the Apple or Google account you linked.</p>
+        <p>Write to <a href="mailto:support@rbv-studio.com">support@rbv-studio.com</a>. Because an account needs no email or password, we may ask you to prove it is yours, with your deletion code or a sign-in with the Google account you linked.</p>
 
         <h2>Changes to this policy</h2>
         <p>When we change this policy, we update the date at the top and publish the new version here and in the app. If a change affects what we collect or who sees it, we tell you in the app before it takes effect.</p>
@@ -303,13 +284,12 @@
 
         <h2>Other services and their privacy policies</h2>
         <ul>
-          <li><strong>Google</strong> (Google Play, Google Play Billing, Google backup and Block Store, Sign in with Google, Play Integrity): <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></li>
-          <li><strong>Google AdMob</strong> (ads): <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+          <li><strong>Google</strong> (Google Play, Google backup and Block Store, Sign in with Google): <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></li>
           <li><strong>Firebase Cloud Messaging</strong> (push notifications): <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></li>
-          <li><strong>Sign in with Apple</strong>: <a href="https://www.apple.com/legal/privacy/" rel="noopener">www.apple.com/legal/privacy</a></li>
           <li><strong>OpenFreeMap</strong> (map pictures): <a href="https://openfreemap.org/privacy/" rel="noopener">openfreemap.org/privacy</a> — map data © OpenStreetMap contributors: <a href="https://www.openstreetmap.org/copyright" rel="noopener">www.openstreetmap.org/copyright</a></li>
           <li><strong>Amazon Web Services</strong> (our encrypted backups): <a href="https://aws.amazon.com/privacy/" rel="noopener">aws.amazon.com/privacy</a></li>
         </ul>
+
       </div>
     </div>
   </main>
